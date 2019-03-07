@@ -1,0 +1,22 @@
+@charset 'utf-8';
+
+// All mixins and variables.
+@import 'abstract/base/**/*';      // Generics mixins.
+@import 'abstract/variables/**/*'; // All project's variables.
+@import 'abstract/project/**/*';   // All project's specifics rules.
+
+// -----------------------------------------------------------------------------
+// Editor
+// -----------------------------------------------------------------------------
+
+@import 'common/base/content';
+@import 'common/base/fonts-declarations';
+
+body {
+  padding: 20px;
+
+  font-family: $font-stack;
+  font-size: 1.6rem;
+
+  @include contrib;
+}

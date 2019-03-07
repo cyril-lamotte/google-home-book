@@ -1,0 +1,44 @@
+
+// Make columns.
+//
+// @param {Int} $col-count [2] - Columns count
+// @param {CSS value} $margin [0] - Margin between columns
+// @param {CSS flex-wrap value} $wrap [nowrap] - Flex-wrap mode
+// @param {CSS selector} $selector ['div'] - Child selector
+//
+// @include cols((
+//   'col-count': 3,
+//   'margin': 3%,
+//   'wrap': wrap
+// )...);
+@mixin cols($col-count: 2, $margin: 0, $wrap: nowrap, $selector: 'div') {
+  display: flex;
+  flex-flow: row $wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+
+  > #{$selector} {
+    flex-basis: 100% / $col-count - $margin;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  // Add final element for last row alignement.
+  @if $wrap == 'wrap' {
+    .filler,
+    &:after {
+      content: '';
+      flex-basis: 100% / $col-count - $margin;
+    }
+
+  }
+  @else {
+
+    &:after {
+      display: none;
+    }
+
+  }
+
+}

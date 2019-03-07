@@ -1,0 +1,30 @@
+
+// Site width.
+$max-site-width-int: 1280;
+$max-site-width: $max-site-width-int * 1px; // Add px unit.
+
+$spacing: 1.6rem;
+$sp: $spacing;
+
+// Breakpoints map - Based on Bootstrap reference.
+// <  480px - Very small screens (ex: Phones portait)
+// <  768px - Small screens (ex: Phones)
+// >= 768px - Medium screens (ex: Tablets portrait)
+// >= 992px - Large screens (ex: Tablets landscape or desktops)
+// >= $max-site-width - Very large screens (ex: large desktops/tablets)
+//
+// @link http://getbootstrap.com/css/#responsive-utilities Bootstrap breakpoints
+// reference.
+$breakpoints: (
+  '0' : 0,
+  'xs': 480,
+  'xs-2': 640,
+  'sm': 768,
+  'md': 992,
+  'lg': $max-site-width-int + 32
+);
+
+
+$breakpoints-vertical: (
+  'sm': 760,
+);

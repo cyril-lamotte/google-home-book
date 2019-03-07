@@ -1,0 +1,13 @@
+.badges {
+  margin: $sp*2 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: flex-start;
+
+  img {
+    display: block;
+  }
+
+}

@@ -1,0 +1,65 @@
+
+@mixin arrow-thin($direction: 'top', $color: #000000, $bg-color: #ffffff, $size: 20px, $thickness: 0) {
+  position: relative;
+
+  $direction-inv: bottom !default;
+
+  // Invert direction for styling.
+  @if ($direction == 'bottom') {
+    $direction-inv: 'top';
+  }
+  @elseif ($direction == 'top') {
+    $direction-inv: 'bottom';
+  }
+  @elseif ($direction == 'right') {
+    $direction-inv: 'left';
+  }
+  @elseif ($direction == 'left') {
+    $direction-inv: 'right';
+  }
+
+  //direction-inv: $direction-inv;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+
+    @if ($direction-inv == 'top') {
+      #{$direction-inv}: calc(50% - #{$size / 2});
+    }
+    @else if ($direction-inv == 'bottom') {
+      #{$direction-inv}: calc(50% - #{$size/2});
+    }
+
+    right: calc(50% - #{$size});
+    border: solid transparent;
+    height: 0;
+    width: 0;
+    pointer-events: none;
+  }
+
+  // Thin arrow.
+  &:before {
+    border-color: rgba($color, 0);
+    border-#{$direction-inv}-color: $color;
+    border-width: $size;
+  }
+
+  // Mask.
+  &:after {
+    border-color: rgba($bg-color, 0);
+    border-#{$direction-inv}-color: $bg-color;
+    border-width: $size + $thickness +1;
+
+    @if ($direction-inv == 'top') {
+      #{$direction-inv}: calc(50% - #{$size / 2 + $thickness + 2px });
+    }
+    @else if ($direction-inv == 'bottom') {
+      #{$direction-inv}: calc(50% - #{$size} + #{$thickness} + 1px);
+    }
+
+    right: calc(50% - #{$size + $thickness + 1});
+  }
+
+}

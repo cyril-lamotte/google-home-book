@@ -1,0 +1,53 @@
+
+.home-dots {
+  margin: 2rem 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+
+  span {
+    --size: 30px;
+    --color: #{$blue};
+    --delay: 0;
+
+    background: var(--color);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    margin-right: 0.5rem;
+
+    animation-name: dotjump;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-delay: var(--delay);
+
+    &:nth-child(2) {
+      --size: 25px;
+      --color: #{$yellow};
+      --delay: 0.2s;
+    }
+
+    &:nth-child(3) {
+      --size: 20px;
+      --color: #{$red};
+      --delay: 0.4s;
+    }
+
+    &:nth-child(4) {
+      --size: 10px;
+      --color: #{$green};
+      --delay: 0.6s;
+    }
+  }
+
+}
+
+@keyframes dotjump {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(0, -20px, 0); }
+}

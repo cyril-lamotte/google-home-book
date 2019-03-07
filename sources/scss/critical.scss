@@ -1,0 +1,18 @@
+@charset 'utf-8';
+
+// All mixins and variables.
+@import 'abstract/base/**/*';      // Generics mixins.
+@import 'abstract/variables/**/*'; // All project's variables.
+@import 'abstract/project/**/*';   // All project's specifics rules.
+
+// Normalize.css is managed by a postCSS plugin.
+@import-normalize;
+
+// -----------------------------------------------------------------------------
+// Critical
+// Includes basic layout & most important interface components.
+// -----------------------------------------------------------------------------
+
+@import 'critical/reset/*';
+@import 'critical/helpers/*';
+@import 'critical/layout/*';

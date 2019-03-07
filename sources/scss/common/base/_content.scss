@@ -1,0 +1,17 @@
+
+html {
+  font: #{em($base-font-size, 16px)}/$base-line-height $font-stack;
+  color: $base-color;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: $global-font-size;
+  margin: 0;
+  border-top: 4px solid $blue;
+}
+
+a {
+  @include underline('inv');
+  color: $base-color;
+}

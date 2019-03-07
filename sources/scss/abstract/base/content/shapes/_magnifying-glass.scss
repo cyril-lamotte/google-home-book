@@ -1,0 +1,28 @@
+
+// Display a magnifying glass with CSS only.
+//
+// $size  : px or em
+// $color : hex
+@mixin magnifying-glass($size: 1em, $color: #000) {
+  display: inline-block;
+  font-size: 4rem;
+  width: 0.4em;
+  height: 0.4em;
+  border: 0.1em solid $color;
+  position: relative;
+  border-radius: 0.35em;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: -0.2em;
+    bottom: -0.15em;
+    border-width: 0;
+    background: $color;
+    width: 0.25em;
+    height: 0.08em;
+    transform: rotate(45deg);
+  }
+
+}

@@ -1,0 +1,39 @@
+
+// Display a cross with CSS only.
+//
+// $size  : px or em
+// $color : hex
+@mixin cross($size: 20px, $color: #000) {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  position: relative;
+  width: $size;
+  height: $size;
+  cursor: pointer;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: $size / 2;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: $color;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+
+  span {
+    display: block;
+  }
+
+}

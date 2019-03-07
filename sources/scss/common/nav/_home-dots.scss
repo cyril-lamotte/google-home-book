@@ -19,7 +19,7 @@
     margin-right: 0.5rem;
 
     animation-name: dotjump;
-    animation-duration: 500ms;
+    animation-duration: 2000ms;
     animation-timing-function: ease-out;
     animation-direction: alternate;
     animation-iteration-count: infinite;
@@ -48,6 +48,6 @@
 }
 
 @keyframes dotjump {
-  from { transform: translate3d(0, 0, 0); }
+  0%, 80% { transform: translate3d(0, 0, 0); }
   to { transform: translate3d(0, -20px, 0); }
 }

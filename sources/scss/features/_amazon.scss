@@ -1,10 +1,7 @@
 
 .amazon {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: flex-start;
-  align-content: flex-start;
-  margin: 0 -1rem;
+  margin: 0 auto;
+  max-width: 600px;
 
   iframe {
     border: 0;
@@ -14,8 +11,24 @@
 
 }
 
+.amazon__title {
+  margin: 0 0 2rem;
+  font-weight: 300;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.amazon__list {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin: 0 -1rem;
+}
+
 .amazon__item {
   padding: 0 1rem;
   flex-grow: 1;
   margin-bottom: $sp;
 }
+

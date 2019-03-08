@@ -13,6 +13,11 @@
 
 }
 
+.teaser__col {
+  min-width: 0;
+  flex-basis: 60%;
+}
+
 .teaser__col--extract {
   flex: 1 0 40%;
   margin-bottom: 2*$sp;
@@ -25,6 +30,7 @@
 
 
 .img-anim {
+  display: block;
   animation-name: imageEnter;
   animation-duration: 2000ms;
   animation-timing-function: ease-out;
